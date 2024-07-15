@@ -1,113 +1,446 @@
-import Image from "next/image";
+"use client";
+import IndexHead from "./componentas/IndexHead";
+import Loader from "./componentas/Loader";
+import Script from "next/script";
+import Footer from "./componentas/Footer";
+import NavbarHome from "./componentas/NavbarHome";
+import HomeHero from "./componentas/HomeHero";
+import HomeAbout from "./componentas/HomeAbout";
+import HomeTeamSection from "./componentas/HomeTeamSection";
+import HomeService from "./componentas/HomeService";
+import HomeSplit from "./componentas/HomeSplit";
+import HomeServices from "./componentas/HomeServices";
+import HomeFeature from "./componentas/HomeFeature";
+import HomeBlog from "./componentas/HomeBlog";
+import HomeNewsLetter from "./componentas/HomeNewsLetter";
+import HomeContact from "./componentas/HomeContact";
+// import { useEffect } from "react";
+
+
+
 
 export default function Home() {
+  // const BackgroundSlider = () => {
+  //   useEffect(() => {
+  //     const images = [
+  //       "images2/home-bg/001.jpg",
+  //       "images2/home-bg/002.jpg",
+  //       "images2/home-bg/003.jpg",
+  //       "images2/home-bg/004.jpg",
+  //       "images2/home-bg/005.jpg",
+  //       "images2/home-bg/006.jpg",
+  //       "images2/home-bg/007.jpg",
+  //       "images2/home-bg/008.jpg",
+  //       "images2/home-bg/009.jpg",
+  //       "images2/home-bg/0010.jpg",
+  //       "images2/home-bg/0011.jpg",
+  //     ];
+  //     let currentIndex = 1; // start from the second image since the first is already set
+  //     let activeBg = 1;
+  
+  //     const changeBackground = () => {
+  //       const nextBg =
+  //         activeBg === 1
+  //           ? document.getElementById("bg2")
+  //           : document.getElementById("bg1");
+  //       const currentBg =
+  //         activeBg === 1
+  //           ? document.getElementById("bg1")
+  //           : document.getElementById("bg2");
+  
+  //       nextBg.style.backgroundImage = `url(${images[currentIndex]})`;
+  //       nextBg.style.opacity = 1;
+  //       currentBg.style.opacity = 0;
+  
+  //       activeBg = activeBg === 1 ? 2 : 1;
+  //       currentIndex = (currentIndex + 1) % images.length;
+  //     };
+  
+  //     const intervalId = setInterval(changeBackground, 4000);
+  
+  //     const handleScroll = () => {
+  //       const navbar = document.querySelector(".inner-nav");
+  //       const scrollPosition = window.scrollY;
+  //       if (scrollPosition > 100) {
+  //         navbar.classList.add("nav-scrolled");
+  //       } else {
+  //         navbar.classList.remove("nav-scrolled");
+  //       }
+  //     };
+  
+  //     window.addEventListener("scroll", handleScroll);
+  
+  //     // Check scroll position on load in case the page is reloaded with an existing scroll
+  //     handleScroll();
+  
+  //     // Cleanup on component unmount
+  //     return () => {
+  //       clearInterval(intervalId);
+  //       window.removeEventListener("scroll", handleScroll);
+  //     };
+  //   }, []);
+      
+   
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+    {/* Google tag (gtag.js) */}
+    <meta charSet="UTF-8" />
+    <meta httpEquiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Dermatologist &amp; Dentist of Ahmedabad | Shinora</title>
+    <meta
+      name="description"
+      content="Looking for expert skin care and best dentist in ahmedabad? Shinora Clinic offers top-notch dermatology services near you. Book your appointment now!"
+    />
+    <meta
+      name="keyword"
+      content=" best dermatologist in Ahmedabad, skin specialist near me, best dermatologist near me, best skin doctor near me, best dermatologist Sindhubhavan, best skin doctor in Ahmedabad, best skin specialist doctor in Ahmedabad"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="contact" content="+91 889 933 0033" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="geo.placename" content="Ahmedabad, India" />
+    <meta name="geo.placename" content="Gujarat, India" />
+    <meta
+      name="author"
+      content="Shinora -  Skin & Dental Clinic, appointment@shinora.in"
+    />
+    <meta
+      name="og:title"
+      content="Best Dermatologist in Ahmedabad | Skin Specialist - Shinora"
+    />
+    <meta
+      name="og:description"
+      content="Looking for expert skin care? Shinora Clinic offers top-notch dermatology services near you. Book your appointment now!"
+    />
+    <meta property="og:image" content="" />
+    <meta name="og:email" content="appointment@shinora.in" />
+    <meta name="og:phone_number" content="+91 889 933 0033" />
+    <meta name="og:url" content="https://www.shinora.in/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta
+      name="twitter:title"
+      content="Best Dermatologist in Ahmedabad | Skin Specialist - Shinora"
+    />
+    <meta
+      name="twitter:description"
+      content="Looking for expert skin care? Shinora Clinic offers top-notch dermatology services near you. Book your appointment now!"
+    />
+    {/* Favicon */}
+    <link
+      rel="icon"
+      href="images/favicon/favicon.ico"
+      type="image/png"
+      sizes="any"
+    />
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/svg+xml" />
+    {/* CSS */}
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-responsive.css" />
+    <link rel="stylesheet" href="css/vertical-rhythm.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/splitting.css" />
+    <link rel="stylesheet" href="css/YTPlayer.css" />
+    <link rel="stylesheet" href="css/demo-strong/demo-strong.css" />
+    <link rel="stylesheet" href="css/before-after.css" />
+    <style
+      dangerouslySetInnerHTML={{
+        __html:
+          '\n      @font-face {\n        font-family: BlackMango;\n        src: url(./webfonts/black-mango/BlackMango-Medium.ttf);\n      }\n      @font-face {\n        font-family: Plus Jakarta Sans;\n        src: url(./webfonts/plus-jakatra/PlusJakartaSans-Regular.ttf);\n      }\n      h1,\n      h3 {\n        font-family: Plus Jakarta Sans;\n        font-size: 45px;\n      }\n\n      p {\n        font-family: "Plus Jakarta Sans", sans-serif;\n      }\n    '
+      }}
+    />
+    <style
+      dangerouslySetInnerHTML={{
+        __html:
+          "\n      @keyframes fadeIn {\n        0% {\n          opacity: 0;\n        }\n        100% {\n          opacity: 1;\n        }\n      }\n\n      #home {\n        animation: fadeIn 3s ease-in-out;\n        background-size: cover;\n        background-position: center;\n        transition: background-image 3s ease-in-out;\n      }\n\n      .background-div {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        background-size: cover;\n        background-position: center;\n        transition: opacity 3s ease-in-out;\n        filter: brightness(30%);\n      }\n\n      #bg1 {\n        opacity: 1;\n      }\n      #bg2 {\n        opacity: 0;\n      }\n    "
+      }}
+    />
+    <style
+      dangerouslySetInnerHTML={{
+        __html:
+          "\n      .nav-scrolled a {\n        color: #055d5b !important; /* Change this color to whatever you want for the scrolling state */\n      }\n    "
+      }}
+    />
+    {/* Page Loader */}
+    {/* <div className="page-loader">
+      <div className="loader">Loading...</div>
+    </div> */}
+    {/* End Page Loader */}
+    {/* Skip to Content */}
+    <a href="#main" className="btn skip-to-content">
+      Skip to Content
+    </a>
+    {/* End Skip to Content */}
+    {/* Page Wrap */}
+    <div className="page" id="top">
+      {/* Navigation Panel */}
+      <NavbarHome/>
+      {/* End Navigation Panel */}
+      <main id="main">
+        {/* Home Section */}
+        <HomeHero/>
+        {/* End Home Section */}
+        {/* About Section */}
+        <HomeAbout/>
+        {/* End About Section */}
+        {/* Divider */}
+        <hr className="mt-0 mb-0" />
+        {/* End Divider */}
+        {/* Team Section */}
+        <HomeTeamSection/>
+        {/* End Team Section */}
+        {/* Divider */}
+        <hr className="mt-0 mb-0" />
+        {/* End Divider */}
+        {/* Services Section */}
+        <HomeService/>
+        {/* End Services Section */}
+        {/* Split Section */}
+        <HomeSplit/>
+        {/* End Split Section */}
+        {/* Services Section */}
+        <HomeServices/>
+        {/* End Services Section */}
+        {/* Divider */}
+        <hr className="mt-0 mb-0" />
+        {/* End Divider */}
+        {/* Features Section */}
+        <HomeFeature/>
+        {/* End Features Section */}
+        {/* Testimonials Section */}
+        {/* <section class="page-section overflow-hidden">
+      <div class="container">
+        <div class="row mb-90 mb-sm-50">
+          <div
+            class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <h2
+              class="section-title-strong mb-40"
+              style="font-family: Plus Jakarta Sans"
+            >
+              Patients <span class="font-alt">Stories</span>
+            </h2>
+            <p class="mb-0">
+              Etiam et arcu nec quam laoreet hendrerit eget sed velit. Fusce
+              convallis elit at ex sodales, quis maximus augue hendrerit.
+              Phasellus eget turpis vel nibh convallis vulputate.
+              Pellentesque efficitur augue ac ex maximus, eget viverra sem
+              aliquam. Mauris egestas, lectus sed accumsan varius.
+            </p>
+          </div>
+        </div> */}
+        {/* Testimonials Carousel */}
+        {/* <div class="wow fadeInUp">
+          <div class="testimonials-slider-3 slider-strong"> */}
+        {/* Testimonials item */}
+        {/* <div class="testimonials-3-item">
+              <div class="testimonials-3-icon">
+                <i class="icon-quotation-mark"></i>
+              </div>
+              <blockquote class="testimonials-3-text">
+                <p class="mb-0">
+                  Beautifull template, and easy to customize. Optimization
+                  and structure are verry good for SEO basics. Quick,
+                  courteous, and extremely helpful!
+                </p>
+                <footer class="testimonials-3-author pt-30 clearfix">
+                  <div class="testimonials-3-author-img float-start">
+                    <img
+                      width="44"
+                      height="44"
+                      src="images/demo-strong/user-1.jpg"
+                      alt="Image description is here"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    Thomas Johnson
+                    <div class="small">UI/UX designer</div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div> */}
+        {/* End Testimonials item */}
+        {/* Testimonials item */}
+        {/* <div class="testimonials-3-item">
+              <div class="testimonials-3-icon">
+                <i class="icon-quotation-mark"></i>
+              </div>
+              <blockquote class="testimonials-3-text">
+                <p class="mb-0">
+                  This is template is so beautiful and has such wonderful
+                  new options. It is updated often which gives me even more
+                  quality.
+                </p>
+                <footer class="testimonials-3-author pt-30 clearfix">
+                  <div class="testimonials-3-author-img float-start">
+                    <img
+                      width="44"
+                      height="44"
+                      src="images/demo-strong/user-2.jpg"
+                      alt="Image description is here"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    Alice Watson
+                    <div class="small">3D artist</div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div> */}
+        {/* End Testimonials item */}
+        {/* Testimonials item */}
+        {/* <div class="testimonials-3-item">
+              <div class="testimonials-3-icon">
+                <i class="icon-quotation-mark"></i>
+              </div>
+              <blockquote class="testimonials-3-text">
+                <p class="mb-0">
+                  A remarkable model, everything has been thought out with
+                  talent, the design, the responsiveness, the various
+                  adaptations.
+                </p>
+                <footer class="testimonials-3-author pt-30 clearfix">
+                  <div class="testimonials-3-author-img float-start">
+                    <img
+                      width="44"
+                      height="44"
+                      src="images/demo-strong/user-3.jpg"
+                      alt="Image description is here"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    Peter Braun
+                    <div class="small">Business owner</div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div> */}
+        {/* End Testimonials item */}
+        {/* Testimonials item */}
+        {/* <div class="testimonials-3-item">
+              <div class="testimonials-3-icon">
+                <i class="icon-quotation-mark"></i>
+              </div>
+              <blockquote class="testimonials-3-text">
+                <p class="mb-0">
+                  Beautifull template, and easy to customize. Optimization
+                  and structure are verry good for SEO basics. Quick,
+                  courteous, and extremely helpful!
+                </p>
+                <footer class="testimonials-3-author pt-30 clearfix">
+                  <div class="testimonials-3-author-img float-start">
+                    <img
+                      width="44"
+                      height="44"
+                      src="images/demo-strong/user-1.jpg"
+                      alt="Image description is here"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    Thomas Johnson
+                    <div class="small">UI/UX designer</div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div> */}
+        {/* End Testimonials item */}
+        {/* Testimonials item */}
+        {/* <div class="testimonials-3-item">
+              <div class="testimonials-3-icon">
+                <i class="icon-quotation-mark"></i>
+              </div>
+              <blockquote class="testimonials-3-text">
+                <p class="mb-0">
+                  This is template is so beautiful and has such wonderful
+                  new options. It is updated often which gives me even more
+                  quality.
+                </p>
+                <footer class="testimonials-3-author pt-30 clearfix">
+                  <div class="testimonials-3-author-img float-start">
+                    <img
+                      width="44"
+                      height="44"
+                      src="images/demo-strong/user-2.jpg"
+                      alt="Image description is here"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    Alice Watson
+                    <div class="small">3D artist</div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div> */}
+        {/* End Testimonials item */}
+        {/* Testimonials item */}
+        {/* <div class="testimonials-3-item">
+              <div class="testimonials-3-icon">
+                <i class="icon-quotation-mark"></i>
+              </div>
+              <blockquote class="testimonials-3-text">
+                <p class="mb-0">
+                  A remarkable model, everything has been thought out with
+                  talent, the design, the responsiveness, the various
+                  adaptations.
+                </p>
+                <footer class="testimonials-3-author pt-30 clearfix">
+                  <div class="testimonials-3-author-img float-start">
+                    <img
+                      width="44"
+                      height="44"
+                      src="images/demo-strong/user-3.jpg"
+                      alt="Image description is here"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    Peter Braun
+                    <div class="small">Business owner</div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div> */}
+        {/* End Testimonials item */}
+        {/* </div>
+        </div> */}
+        {/* End Testimonials Carousel */}
+        {/* </div>
+    </section> */}
+        {/* End Testimonials Section */}
+        {/* Divider */}
+        <hr className="mt-0 mb-0" />
+        {/* End Divider */}
+        {/* Blog Section */}
+          <HomeBlog/>
+        {/* End Blog Section */}
+        {/* Newsletter Section */}
+          <HomeNewsLetter/>
+        {/* End Newsletter Section */}
+        {/* Contact Section */}
+        <HomeContact/>
+        {/* End Contact Section */}
+      </main>
+      <Footer/>
+    </div>
+    {/* End Page Wrap */}
+    {/* JS */}
+    <Script src="js/jquery.min.js"></Script>
+    <Script src="js/bootstrap.bundle.min.js"></Script>
+    <Script src="js/plugins.js"></Script>
+    <Script src="js/jquery.ajaxchimp.min.js"></Script>
+    <Script src="js/contact-form.js"></Script>
+    <Script src="js/all.js"></Script>
+    <Script src="js/before-after.js"></Script>
+    <Script src="js/homeInd.js"></Script>
+    {/* End JS */}
+    
+  </>
+  
   );
 }
