@@ -1,4 +1,6 @@
 "use client";
+
+
 import IndexHead from "./componentas/IndexHead";
 import Loader from "./componentas/Loader";
 import Script from "next/script";
@@ -27,6 +29,7 @@ export default function Home() {
 
   return (
     <>
+  
     {/* Google tag (gtag.js) */}
     <meta charSet="UTF-8" />
     <meta httpEquiv="content-type" content="text/html;charset=utf-8" />
@@ -83,6 +86,7 @@ export default function Home() {
     />
     <link rel="icon" href="images/favicon/favicon.ico" type="image/svg+xml" />
     {/* CSS */}
+   
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style-responsive.css" />
@@ -112,9 +116,7 @@ export default function Home() {
       }}
     />
     {/* Page Loader */}
-    {/* <div className="page-loader">
-      <div className="loader">Loading...</div>
-    </div> */}
+    <Loader/>
     {/* End Page Loader */}
     {/* Skip to Content */}
     <a href="#main" className="btn skip-to-content">
