@@ -1,11 +1,10 @@
 import React from 'react'
-import Footer from '../componentas/Footer'
-import Loader from '../componentas/Loader'
-import NavbarScrollEffect from '../componentas/NavbarScrollEffect'
 import Script from 'next/script'
+import Blog7HomeSection from '../componentas/Blog7HomeSection'
+import Blog7Section from '../componentas/Blog7Section'
+import Footer from '../componentas/Footer'
 import NavbarSubBlog from '../componentas/NavbarSubBlog'
-import Blog5HomeSection from '../componentas/Blog5HomeSection'
-import Blog5Section from '../componentas/Blog5Section'
+import NavbarScrollEffect from '../componentas/NavbarScrollEffect'
 function page() {
   return (
     <>
@@ -42,7 +41,9 @@ function page() {
       }}
     />
     {/* Page Loader */}
-   <Loader/>
+    <div className="page-loader">
+      <div className="loader">Loading...</div>
+    </div>
     {/* End Page Loader */}
     {/* Skip to Content */}
     <a href="#main" className="btn skip-to-content">
@@ -52,14 +53,14 @@ function page() {
     {/* Page Wrap */}
     <div className="page" id="top">
       {/* Navigation Panel */}
-      <NavbarSubBlog/>
+     <NavbarSubBlog/>
       {/* End Navigation Panel */}
       <main id="main">
         {/* Home Section */}
-        <Blog5HomeSection/>
+        <Blog7HomeSection/>
         {/* End Home Section */}
         {/* Section */}
-       <Blog5Section/>
+        <Blog7Section/>
         {/* End Section */}
         {/* Divider */}
         <hr className="mt-0 mb-0" />

@@ -28,14 +28,14 @@ function NavbarSubBlog() {
               <li>
                 <a
                   href="index.html"
-                  className="active"
+                  
                   style={{ color: "#ddbc93" }}
                 >
                   Home
                 </a>
               </li>
               <li>
-                <a href="about.html" style={{ color: "#ddbc93" }}>
+                <a href="about.html" style={{ color: "#ddbc93" }} >
                   About
                 </a>
               </li>
@@ -398,7 +398,7 @@ function NavbarSubBlog() {
               </li>
               {/* End Item With Sub */}
               <li>
-                <a href="blog-main.html" style={{ color: "#ddbc93" }}>
+                <a href="blog-main.html" style={{ color: "#ddbc93" }} className="active">
                   Blog
                 </a>
               </li>
